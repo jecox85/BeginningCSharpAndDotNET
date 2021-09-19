@@ -1,0 +1,17 @@
+4.1	If you have two integers stored in variables var1 and var2, what Boolean test can you perform to determine whether one or the other (but not both) is greater than 10?
+	
+	Answer: (var1 > 10) ^ (var2 > 10)
+	
+4.2	Write an application that includes the logic from Exercise 1, obtains two numbers from the user, and displays them, but rejects any input where both numbers are greater than 10 and asks for two new numbers.
+
+4.3	What is wrong with the following code?
+
+	int i;
+	for (i = 1; i <= 10; i++)
+	{
+		if ((i % 2) = 0)
+			continue;
+		Console.WriteLine(i);
+	}
+	
+	Answer: the code uses a = operator instead of the boolean == operator in the line if ((i % 2) = 0)

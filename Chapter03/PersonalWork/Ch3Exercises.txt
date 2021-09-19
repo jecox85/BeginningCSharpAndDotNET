@@ -1,0 +1,36 @@
+3.1	In the following code, how would you refer to the name great from code in the namespace fabulous?
+	
+	namespace fabulous
+	{
+		// code in fabulous namespace
+	}
+	namespace super
+	{
+		namespace smashing
+		{
+			// great name defined
+		}
+	}
+	
+		Answer: super.smashing.great
+
+3.2	Which of the following is not a legal variable name?
+	
+	➤ myVariableIsGood
+	➤ 99Flake
+	➤ _floor
+	➤ time2GetJiggyWidIt
+	➤ wrox.com
+	
+		Answer: 99Flake because it starts with a number and wrox.com because it contains a period.
+		
+3.3	Is the string "supercalifragilisticexpialidocious" too big to fit in a string variable? If so, why?
+
+		Answer: No because strings are a sequence of characters and can use varying amounts of memory.  The limit is apparently 2 GB, which is about 1 billion characters.
+		
+3.4	By considering operator precedence, list the steps involved in the computation of the following expression:
+
+	resultVar += var1 * var2 + var3 % var4 / var5;
+	
+		Answer: Using parenthases, it would look like this: resultVar += ((var1 * var2) + ((var3 % var4) / var5));
+		
