@@ -1,0 +1,59 @@
+6.1	The following two functions have errors. What are they?
+		
+		static bool Write()
+		{
+			Console.WriteLine("Text output from function.");
+		}
+		static void MyFunction(string label, params int[] args, bool showLabel)
+		{
+			if (showLabel)
+				Console.WriteLine(label);
+			foreach (int i in args)
+				Console.WriteLine($"{i}");
+		}
+		
+			Answer:	Static bool Write() is expecting a bool return but doesn't return anything, as written it should be Static void Write().
+					The params int[] should be the last argument for the function statci void MyFunction().
+					
+		
+6.2	Write an application that uses two command-line arguments to place values into a string and an integer variable, respectively. Then display those values.
+
+	Answer: See program solution in accompanying folder.
+
+6.3	Create a delegate and use it to impersonate the Console.ReadLine() function when asking for user input.
+
+	Answer:	See program solution in accompanying folder.
+			
+
+6.4	Modify the following struct to include a function that returns the total price of an order:
+
+		struct Order
+		{
+			public string itemName;
+			public int unitCount;
+			public double unitCost;
+		}
+		
+			answer: 
+				struct Order
+				{
+					public string itemName;
+					public int unitCount;
+					public double unitCost;
+					public double totalCost() => unitCount * unitCost;
+				}
+
+6.5	Add another function to the Order struct that returns a formatted string as follows (as a single line of text, where italic entries enclosed in angle brackets are replaced by appropriate values):
+
+	Order Information: <unit count> <item name> items at $<unit cost> each, total cost $<total cost>
+	
+		answer:
+			struct Order
+				{
+					public string itemName;
+					public int unitCount;
+					public double unitCost;
+					public double totalCost() => unitCount * unitCost;
+					public string aboutOrder() => "Order Information: " + unitCount.ToString() + " " + 
+						itemName + " items at $" + unitCost.ToString + " each, total cost $" + totalCost.ToString();
+				}

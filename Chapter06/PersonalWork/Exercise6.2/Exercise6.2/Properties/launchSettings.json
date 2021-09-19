@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Exercise6.2": {
+      "commandName": "Project",
+      "commandLineArgs": "hello 42"
+    }
+  }
+}
