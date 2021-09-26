@@ -1,0 +1,29 @@
+7.1	"Using Trace.WriteLine() is preferable to using Debug.WriteLine(), as the Debug version works only in debug builds.” Do you agree with this statement? If so, why? 
+
+	Answer: I disagree.  Sometimes you may want information to only be output in debug builds and not in builds that will end up in the customer's hands.
+	
+7.2	Provide code for a simple application containing a loop that generates an error after 5,000 cycles. Use a breakpoint to enter break mode just before the error is caused on the 5,000th cycle. (Note: A simple way to generate an error is to attempt to access a nonexistent array element, such as myArray[1000] in an array with 100 elements.) 
+
+	Answer:
+		int myArray = new int [5];
+		count = 0;
+		while(true)
+		{
+			if (if count == 5000)
+				Console.WriteLine(myArray[5]); //This will generate an error
+			count++;
+		}
+	
+7.3	"finally code blocks execute only if a catch block isn’t executed.” True or false?
+
+	Answer: Finally code blocks contain code that is always executed, either after the try block if no exception occurs, after a catch block if an exception is handled, or just before an unhandled exception moves "up the call stack."
+	
+7.4	Given the enumeration data type orientation defined in the following code, write an application that uses structured exception handling (SEH) to cast a byte-type variable into an orientation-type variable in a safe way. (Note: You can force exceptions to be thrown using the checked keyword, an example of which is shown here. This code should be used in your application.)
+	enum Orientation : byte
+	{
+		North = 1,
+		South = 2,
+		East = 3,
+		West = 4
+	}
+	myDirection = checked((Orientation)myByte);
