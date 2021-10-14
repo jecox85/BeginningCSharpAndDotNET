@@ -1,0 +1,58 @@
+8.1	Which of the following are real levels of accessibility in OOP?
+		a. Friend
+		b. Public
+		c. Secure
+		d. Private
+		e. Protected
+		f. Loose
+		g. Wildcard
+		
+			Answer: b, d, e, 
+		
+8.2	“You must call the destructor of an object manually or it will waste memory.” True or false?
+
+		Answer: false.  C# performs automatic garbage collection periodically and you only need to call the destructor of an object manually if you have a good reason to.
+
+8.3	Do you need to create an object to call a static method of its class?
+
+		Answer: No, static methods of a class can be called without any class instances
+
+8.4 Draw a UML diagram like the ones shown in this chapter for the following classes and interface:
+		
+		-An abstract class called HotDrink that has the methods Drink, AddMilk, and AddSugar, and the properties Milk and Sugar
+			HotDrink (This should be in italics)
+			+Milk
+			+Sugar
+			+Drink()
+			+AddMilk()
+			+AddSugar()
+		
+		-An interface called ICup that has the methods Refill and Wash, and the properties Color and Volume
+			<<Interface>>
+			ICup
+			+Color
+			+Volume
+			+Refill()
+			+Wash()
+		
+		-A class called CupOfCoffee that derives from HotDrink, supports the ICup interface, and has the additional property BeanType
+			CupOfCoffee --> HotDrink --O ICup
+			+BeanType
+		
+		-A class called CupOfTea that derives from HotDrink, supports the ICup interface, and has the additional property LeafType
+			CupOfTea --> HotDrink --O ICup
+			+LeafType
+			
+		See accompanying PNG for a better picture.
+
+8.5	Write some code for a function that will accept either of the two cup objects in the preceding example as a parameter. The function should call the AddMilk, Drink, and Wash methods for any cup object it is passed.	
+		void myFuntion(HotDrink a)
+		{
+			a.AddMilk();
+			a.Drink();
+			if (a is ICup)
+			{
+				ICup cup = a as ICup;
+				cup.Wash();
+			}
+		}
