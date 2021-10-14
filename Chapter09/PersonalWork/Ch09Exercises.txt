@@ -1,0 +1,29 @@
+9.1	What is wrong with the following code?
+		
+		public sealed class MyClass
+		{
+			// Class members.
+		}
+		public class myDerivedClass : MyClass
+		{
+			// Class members.
+		}
+		
+			Answer: MyClass is a sealed class which means that it cannot be derived from and myDerivedClass tries to inherit MyClass
+			
+9.2	How would you define a noncreatable class?
+	
+		Answer:
+			You can define a non-creatable class by defining it as a static or abstract class or by defining all of its constructors as private.
+			
+9.3	Why are noncreatable classes still useful? How do you make use of their capabilities?
+
+		Answer: Non-creatable classes can be used as base classes.  Static classes can also have methods that can be used without instantiating an object, such as Console.WriteLine() or Convert.ToString().  Neither of these require creating instances of the Console or Convert classes.
+		
+9.4	Write code in a class library project called Vehicles that implements the Vehicle family of objects discussed earlier in this chapter. There are nine objects and two interfaces that require implementation.
+
+		Answer: See accompanying project
+		
+9.5 Create a console application project, Traffic, that references Vehicles.dll (created in Exercise 9.4). Include a function called AddPassenger that accepts any object with the IPassengerCarrier interface. To prove that the code works, call this function using instances of each object that supports this interface, calling the ToString method inherited from System.Object on each one and writing the result to the screen.
+
+		Answer: See accompanying project
