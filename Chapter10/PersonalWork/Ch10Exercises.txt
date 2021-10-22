@@ -1,0 +1,44 @@
+10.1	Write code that defines a base class, MyClass, with the virtual method GetString().  This method should return the string stored in the protected field myString, accessible through the write-only public property ContainedString.
+
+			Answer:
+				class MyClass
+				{
+					protected string myString;
+					public string ContainedString
+					{
+						set
+						{
+							myString = value;
+						}
+					}
+					public virtal string GetString() => myString;
+				
+
+10.2	Derive a class, MyDerivedClass, from MyClass. Override the GetString() method to return the string from the base class, using the base implementation of the method, but add the text “(output from derived class)” to the returned string. 
+			
+			Answer:
+			
+				class MyDerivedClass : MyClass
+				{
+					public override string GetString() => base.GetString() + " (output from derived class)";
+				}
+
+10.3	Partial method definitions must use the void return type. Provide a reason why this is so. 
+			
+			Answer: If you compile code that contains a partial method definition but doesn't have an implementation, the compiler removes the method entirely and any calls to the method.  If the code was expecting a return from the partial methods, then the program might not run correctly.  If the method calls are just void methods with no returns, then the program can still run, albiet with errors if not implemented smartly.
+			
+			The answer from the text: 
+			If no implementation is provided for a partial method, then it will be removed by the compiler along with all places where it is used.  In the preceding code, this would leave the result of x unclear because no replacement for the Manipulat() method is available.  It might be the case that without this method you would simply want to ignore the entire line of code, but th ecompiler cannot decide whether this is what you want.
+			
+			Methods with no return types are not called as part of expressions, so it is safe fo rthe compiler to remove all references to the partial method calls.
+			
+			Similarly, out parameters are forbidden since variables used as an out parameter are undefined before the method call and will not be defined after the method call.  Removing the method call would break this behavior.
+			
+
+10.4	Write a class called MyCopyableClass that can return a copy of itself using the method GetCopy(). This method should use the MemberwiseClone() method inherited from System.Object. Add a simple property to the class and write client code that uses the class to confirm that everything is working.
+
+			Answer: see accompanying program.
+
+10.5	Write a console client for the Ch10CardLib library that draws five cards at one time from a shuffled Deck object. If all five cards are the same suit, then the client should display the card names onscreen along with the text Flush!; otherwise, it should quit after 50 cards with the text No flush.
+
+			Answer: see accompanying program.
